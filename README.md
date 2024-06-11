@@ -19,6 +19,6 @@ For image with python-flask
    < docker run --name things-web -p 8080:5000 things-image -d >
 
    For web-application using apache
-   < docer run --name thinigs-web -p 8080:80 things-image -d >
+   < docker run --name things-web -p 8080:80 things-image -d >
 
 6. Thats it, you should be can access your web application from http://localhost:8080/.
