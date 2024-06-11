@@ -7,8 +7,8 @@ So, if you find this repository helpful for deploying your application on Docker
 ## How to Deploy
 
 1. Create Docker images with this command.
-   For image with python-flask
-   < docker build -t -f  Dockerfile-flask things-image . >
+For image with python-flask
+< docker build -t -f  Dockerfile-flask things-image . >
 
    For image with python-apache
    < docker build -t -f  Dockerfile-apache things-image . >
