@@ -14,10 +14,11 @@ For image with python-flask
    < docker build -t -f  Dockerfile-apache things-image . >
 
 4. Create Container using image that has been created, using this command.
+
    For web-application using python-flask
    < docker run --name things-web -p 8080:5000 things-image -d >
 
    For web-application using apache
    < docer run --name thinigs-web -p 8080:80 things-image -d >
 
-5. Thats it, you should be can access your web application from http://localhost:8080/.
+6. Thats it, you should be can access your web application from http://localhost:8080/.
