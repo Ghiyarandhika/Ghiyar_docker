@@ -1,0 +1,16 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    pip install flask && \
+    apt-get clean
+
+RUN mkdir /opt/static
+RUN mkdir /opt/static/images
+
+COPY app.py /opt/app.py
+COPY /templates/index.html /opt/templates/index.html
+COPY /static/images/ /opt/static/images
+
+ENTRYPOINT ["flask", "run", "--host=0.0.0.0"]
+ENV FLASK_APP=/opt/app.py

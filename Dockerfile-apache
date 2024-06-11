@@ -1,0 +1,21 @@
+FROM ubuntu:20.04
+
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y apache2 apache2-utils tzdata && \
+    ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && \
+    dpkg-reconfigure --frontend noninteractive tzdata && \
+    apt-get clean && \
+    mkdir /var/www/html/static
+    mkdir /var/www/html/static/images
+
+EXPOSE 80
+
+
+COPY /templates/index.html /var/www/html
+COPY /static/images/* /var/www/html/static/images
+
+
+CMD ["apache2ctl", "-D", "FOREGROUND"]
