@@ -8,7 +8,7 @@ RUN apt-get update && \
     ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata && \
     apt-get clean && \
-    mkdir /var/www/html/static
+    mkdir /var/www/html/static && \
     mkdir /var/www/html/static/images
 
 EXPOSE 80
